@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+</head>
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300&family=Comfortaa:wght@500&family=Kanit:wght@500&family=Montserrat:wght@300&family=Nunito:wght@300&family=PT+Sans&family=Poppins&family=Secular+One&family=Suez+One&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,200" />
+
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div id="sidebar" class="sidebar">
+                <h3>Riwayat Booking</h3>
+                <div id="invoiceList"></div>
+            </div>
+            <!-- LEFT : LOGO -->
+            <div class="nav-left">
+                <!-- <img src="assets/logo mercu.png" alt="Logo"> -->
+                <a href="index.html"><span class="brand-text">SPORUMB</span></a>
+            </div>
+
+            <!-- CENTER : MENU (OPSIONAL) -->
+
+            <div class="nav-center">
+                <a href="home.html" class="nav-link active">Home</a>
+                <a href="#venue" class="nav-link">Venue</a>
+                <a href="optionBooking.html" class="nav-link">Booking</a>
+            </div>
+
+
+            <!-- RIGHT : ICON -->
+            <div class="nav-right">
+                <a href="https://api.whatsapp.com/send/?phone=6289531042727&text&type=phone_number&app_absent=0"
+                    class="icon-btn">
+                    <span class="material-symbols-outlined">contacts</span>
+                </a>
+                <!-- <a href="index.html" class="icon-btn">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a> -->
+                <!-- <span class="counter" id="counter"></span> -->
+                <a href="#" onclick="toggleSidebar()" class="icon-btn notif-wrapper">
+                    <span class="material-symbols-outlined">receipt</span>
+                    <span id="notifBadge" class="notif-badge">0</span>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="shadow2">
+        <div class="carousel">
+            <div class="carousel-track">
+
+                <div class="slide active" style="background-image:url('assets/minisoccer.JPG')">
+                    <div class="overlay">
+                        <h1>Minisoccer Field</h1>
+                        <h2>Mercu Buana</h2>
+                        <p>5 Courts · ITF Standard</p>
+                        <a href="#booking" class="btnn">Cek jadwal dan booking disini!</a>
+                    </div>
+                </div>
+
+                <div class="slide" style="background-image:url('assets/badminton.JPG')">
+                    <div class="overlay">
+                        <h1>Volly Field</h1>
+                        <h2>Premium Field</h2>
+                        <p>Standar Nasional · Lighting Night</p>
+                        <a href="#booking" class="btnn">Booking sekarang</a>
+                    </div>
+                </div>
+
+                <div class="slide" style="background-image:url('assets/basket.JPG')">
+                    <div class="overlay">
+                        <h1>Basket Hall</h1>
+                        <h2>Outdoor Court</h2>
+                        <p>AC · Standard Nasional</p>
+                        <a href="#booking" class="btnn">Lihat jadwal</a>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-btn prev">&#10094;</button>
+            <button class="carousel-btn next">&#10095;</button>
+
+            <!-- DOT -->
+            <div class="carousel-dots"></div>
+        </div>
+
+
+        <div class="mengurung" id="venue">
+            <div class="field-grid">
+                <!-- Minisoccer -->
+                <div class="field-card">
+                    <img src="assets/minisoccer.JPG" alt="Lapangan Minisoccer">
+
+                    <div class="field-content">
+                        <h3>Lapangan Minisoccer</h3>
+                        <p class="location">📍 Universitas Mercu Buana (Meruya)</p>
+
+                        <ul class="field-info">
+                            <li>Ukuran: ± 30 × 50 meter</li>
+                            <li>Pencahayaan malam</li>
+                            <li>Ruang ganti & area tunggu</li>
+                        </ul>
+
+                        <div class="field-footer">
+                            <span class="price">Rp 200.000 / jam</span>
+                            <button class="btn-book" onclick="goBooking('Lapangan Minisoccer')">
+                                Booking
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Futsal -->
+                <div class="field-card">
+                    <img src="assets/futsal.JPG" alt="Lapangan Futsal">
+
+                    <div class="field-content">
+                        <h3>Lapangan Futsal</h3>
+                        <p class="location">📍 Universitas Mercu Buana (Meruya)</p>
+
+                        <ul class="field-info">
+                            <li>Ukuran: 25 × 15 meter</li>
+                            <li>Lampu LED</li>
+                            <li>Tribun kecil</li>
+                        </ul>
+
+                        <div class="field-footer">
+                            <span class="price">Rp 200.000 / jam</span>
+                            <button class="btn-book" onclick="goBooking('Lapangan Futsal')">
+                                Booking
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Basket -->
+                <div class="field-card">
+                    <img src="assets/basket.JPG" alt="Lapangan Basket">
+
+                    <div class="field-content">
+                        <h3>Lapangan Basket</h3>
+                        <p class="location">📍 Universitas Mercu Buana (Meruya)</p>
+
+
+                        <ul class="field-info">
+                            <li>Ukuran: 28 × 15 meter</li>
+                            <li>Ring standar</li>
+                            <li>Papan skor manual</li>
+                        </ul>
+
+                        <div class="field-footer">
+                            <span class="price">Rp 200.000 / jam</span>
+                            <button class="btn-book" onclick="goBooking('Lapangan Basket')">
+                                Booking
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voli -->
+                <div class="field-card">
+                    <img src="assets/badminton.JPG" alt="Lapangan Voli">
+
+                    <div class="field-content">
+                        <h3>Lapangan Voli</h3>
+                        <p class="location">📍 Universitas Mercu Buana (Meruya)</p>
+
+
+                        <ul class="field-info">
+                            <li>Ukuran: 18 × 9 meter</li>
+                            <li>Net & tiang standar</li>
+                            <li>Area penonton</li>
+                        </ul>
+
+                        <div class="field-footer">
+                            <span class="price">Rp 200.000 / jam</span>
+                            <button class="btn-book" onclick="goBooking('Lapangan Volly')">
+                                Booking
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <img src="assets/logo mercu.png" alt="" id="balap">
+        </div>
+    </div>
+
+
+    <!-- POPUP SUCCESS -->
+    <!-- <div id="successModal" class="modal">
+        <div class="modal-box">
+            <div class="modal-icon">✔</div>
+            <h3>Booking Berhasil</h3>
+            <p>Data pemesanan berhasil disimpan.<br>Silakan cek riwayat booking.</p>
+            <button onclick="closeModal()">OK</button>
+        </div>
+    </div> -->
+
+    <div id="appModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-icon" id="modalIcon">✔</div>
+            <h3 id="modalTitle">Title</h3>
+            <p id="modalMessage">Message</p>
+            <button onclick="closeModal()" class="modal-btn">OK</button>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+    <!-- <script src="ini.js"></script> -->
+    <script>
+        function goBooking(field) {
+            window.location.href = `optionBooking.html?field=${encodeURIComponent(field)}`;
+        }
+    </script>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const track = document.querySelector(".carousel-track");
+            const slides = document.querySelectorAll(".slide");
+            const dotsContainer = document.querySelector(".carousel-dots");
+
+            const prevBtn = document.querySelector(".carousel-btn.prev");
+            const nextBtn = document.querySelector(".carousel-btn.next");
+
+            let index = 0;
+
+            // ===== DOT =====
+            slides.forEach((_, i) => {
+                const dot = document.createElement("span");
+                if (i === 0) dot.classList.add("active");
+                dot.addEventListener("click", () => moveToSlide(i));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll(".carousel-dots span");
+
+            // ===== FUNCTION SLIDE =====
+            function moveToSlide(i) {
+                index = i;
+                track.style.transform = `translateX(-${index * 100}%)`;
+
+                dots.forEach(dot => dot.classList.remove("active"));
+                dots[index].classList.add("active");
+            }
+
+            // ===== BUTTON PREV / NEXT =====
+            prevBtn.addEventListener("click", () => {
+                index = (index - 1 + slides.length) % slides.length;
+                moveToSlide(index);
+            });
+
+            nextBtn.addEventListener("click", () => {
+                index = (index + 1) % slides.length;
+                moveToSlide(index);
+            });
+
+            // ===== AUTO SLIDE =====
+            setInterval(() => {
+                index = (index + 1) % slides.length;
+                moveToSlide(index);
+            }, 5000);
+
+        });
+
+
+
+    </script> -->
+
+</body>
+
+</html>
